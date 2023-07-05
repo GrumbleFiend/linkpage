@@ -1,0 +1,178 @@
+/* 
+    This is where the creativity starts!
+*/
+
+
+/* 
+    I recommend keeping this one the same.
+    It serves as the default style for items not listed
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+/* 
+    This is your main body style
+    background-color controls the main layer color. if anything breaks it serves as a backup color
+    background adds a gradient effect over the background. The colors start from Top to Bottom by default.
+    If you prefer a single color you can remove the 'background' style and update 'background-color'
+    If you wish to change the direction of the gradient you can add 'to right' or 'to left'
+    change the font-family to one of your choosing and have a backup font. 
+    i.e 'Roboto', sans-serif; 'Roboto' is the primary font and sans-serif is the backup font in this example. 
+    You can have several backups. 'Helvetica', 'Roboto', sans-serif; 'Roboto' is a backup then sans-serif.
+*/
+  body {
+    background-color: #FFFFFF;
+    background: linear-gradient(
+        to left,
+        #00FBFF,
+        #000000,
+        #940084
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Helvetica', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+/*
+    This controls the main alignment
+    I recommend keeping this the same
+*/
+  main {
+    text-align: center;
+    margin: 30px 50px 20px 50px;
+    justify-content: center;
+  }
+  
+/*
+    This is your profile image.
+    border-radius rounds the image. 
+    lower the value to make it more square and increase to make it more round 
+    box-shadow is what gives the outer glow effect
+    remove this to remove the color
+    you can change the color and the values to adjust the size and effect
+    the values are (0 0 0 0)
+    Update the first 0 for the right and left directions (-10px to go left, 10px to go right)
+    Update the second 0 for up and down directions (-10px to go down, 10px to go up)
+    Update the third 0 to add a blur effect (0 for a solid color, 10px for a blurred color)
+    Update the fourth 0 to increase the size (0 for no color, 10px for a lot)
+*/
+  .profile-image {
+    border-radius: 50px;
+    max-width: 100px;
+    box-shadow: 0 0 10px 5px #FDFDFD;
+  }
+  
+/*  
+    This is used for the on-hover glow effect for the links
+    Think of the percents like 'steps'
+    you can change the color and the values to adjust the size and effect
+    the values are (0 0 0 0)
+    Update the first 0 for the right and left directions (-10px to go left, 10px to go right)
+    Update the second 0 for up and down directions (-10px to go down, 10px to go up)
+    Update the third 0 to add a blur effect (0 for a solid color, 10px for a blurred color)
+    Update the fourth 0 to increase the size (0 for no color, 10px for a lot)
+*/
+  @keyframes shadow-pulse {
+    0% {
+      box-shadow: 2px 2px 2px 0 #FDFDFD;
+    }
+    50% {
+      box-shadow: 5px 5px 5px 0 #FDFDFD;
+    }
+    100% {
+      box-shadow: 2px 2px 2px 0 #FDFDFD;
+    }
+  }
+/*
+    This is your header.
+    Update the color to, you guessed it, change the color.
+    Update font-size by increments of .25.
+    text-shadow can be treated similar to box-shadow excepts it's three values instead of 4.
+    Update the first 0 to change right and left directions (-1px to go left, 1px to go right)
+    Update the second 0 to change up and down directions (1px to go down, -1px to go up)
+    Update the third 0 to change the blur effect (1px is solid, 5px is very blurry)
+*/
+  main h1 {
+    color: #703BE7;
+    font-size: 1.75rem;
+    text-shadow: 0 1px 1px #FFFFFF;
+    margin: 0.5em 0 1.5em 0;
+  }
+/*
+    .link controls the link style
+    I recommend only changing background-color, border-radius, and box-shadow color
+    border-radius gives the rounded look.
+    lower the value to make it more square. increase to make it more round.
+    transition controls the on-hover style change which changes the colors when the mouse hovers over the link.
+*/
+  .link {
+    height: 50px;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: #FDFDFD;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px 0 #000000;
+    margin-top: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+/*
+    i style controls the icon colors
+    transition is used when the link is hovered over with the mouse.
+*/
+  i {
+    color:  #703BE7;
+    transition: background-color 0.3s;
+  }
+/*
+    This changes the on-hover styles
+    Replace linear-gradient with a single color to remove the gradient effect
+    Remove border-color, and border-style if you don't want a border.
+    Animation controls the shadow-pulse speed. (1s for very fast, 4s for very slow)
+    infinite allows the animation to continue playing as long as the link is hovered over.
+*/
+  .link:hover {
+    background: linear-gradient(to bottom, #703BE7, #940084);
+    border-color: #FDFDFD;
+    border-style: inset;
+    animation: shadow-pulse 2s infinite;
+  }
+/*
+    This controls the hover style of the icon.
+    I recommend only updating the color.
+*/
+  .link:hover i{
+    color: #FDFDFD;
+    text-decoration: none;
+  }
+/*
+    The last styles control the link page size depending on what device is used (laptops or mobile phones)
+    I recommend leaving these the same.
+*/
+  @media screen and (min-width: 500px) {
+    body {
+      padding: 20px 50px;
+    }
+  }
+  
+  @media screen and (min-width: 800px) {
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+  
+    main {
+      min-width: 800px;
+      padding: 20px 50px;
+    }
+  }
