@@ -1,5 +1,3 @@
-# linkpage
-
 # Welcome!
 
 This linkpage is used purely for educational purposed. 
